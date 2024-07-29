@@ -1,24 +1,11 @@
-# README
+Instachat
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Users can sign up.
 
-Things you may want to cover:
+Users can send follow requests to other users. Users can see what are theirs pending requests.
 
-* Ruby version
+Users can create posts, edit them, destroy them, only when there are authors of the post.
 
-* System dependencies
+Users can like comments.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Users can post comments on posts.

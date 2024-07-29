@@ -1,0 +1,11 @@
+<h1>
+  <%= post.title %>
+</h1>
+<p>
+  <%= post.body %>
+</p>
+<%= link_to "Check out this post", post %>
+<% if current_user == post.author then %>
+  <%= link_to "Destroy this post.", post_path(post), data: { turbo_method: :delete }%>
+  <%= link_to "Edit this post.", edit_post_path(post)%>
+<% end %>
