@@ -23,7 +23,7 @@
         <% end %>
       </ul>
       <% flash.each do |key, value|%>
-        <h2 style="color: green" class=<%=key%>><%= value %></h2>
+        <h2 style="color: green" class=<%= key %>><%= value %></h2>
       <% end %>
     </header>
     <%= yield %>
