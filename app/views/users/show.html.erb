@@ -1,1 +1,17 @@
 <%= render @user %>
+<h3>Followers: </h3>
+<ul>
+  <% @user.followers.each do |f| %>
+    <li>
+      <%= f.username %>
+    </li>
+  <% end %>
+</ul>
+<h3>Following: </h3>
+<ul>
+  <% @user.followings.each do |f| %>
+    <li>
+      <%= f.username %>
+    </li>
+  <% end %>
+</ul>
