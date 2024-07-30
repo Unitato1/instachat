@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :posts
   resources :users_followers, only: [:create, :destroy, :update]
   resources :likes, only: [:create, :destroy, :update]
+  resources :comments, only: [:create, :destroy, :update, :edit]
   # Defines the root path route ("/")
   root "posts#index"
 end

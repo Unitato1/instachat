@@ -1,1 +1,23 @@
 <%= render @post %>
+<br>
+<% @comments.each do |comment| %>
+  <div>
+    <h3>Author: <%= comment.author.username%></h3>
+  </div>
+  <div>
+    <h4>Commented: <%= comment.content %></h4>
+    <% if current_user == comment.author then%>
+      <%= link_to "Edit your comment", edit_comment_path(comment, post_id: @post.id)%>
+    <% end %>
+  </div>
+<% end %>
+<%= form_with model: @comment do |comment_form| %>
+  <%= comment_form.hidden_field :post_id, value: @post.id %>
+  <div>
+    <%= comment_form.label :content %>
+    <%= comment_form.text_area :content, placehoder: "Please enter what your think about this post", autofocus: true %>
+  </div>
+  <div>
+    <%=comment_form.submit "Comment"%>
+  </div>
+<% end %>
