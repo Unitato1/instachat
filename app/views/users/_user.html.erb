@@ -1,6 +1,9 @@
 <h2>Username: <%= user.username %></h2>
 <h3>Email: <%= user.email %></h3>
 <h3>Profile: <%= link_to "#{user.username.upcase}'s profile", user%></h3>
+<% unless current_user == user then %>
+  <h3><%= link_to "Follow", users_followers_path(user: user), data: {turbo_method: :post}%></h3>
+<% end %>
 <ul>
   <h3>User posts:</h3>
   <%= render user.posts %>
