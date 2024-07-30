@@ -24,6 +24,13 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @comment = Comment.find(params[:comment])
+    if @comment.destroy
+      flash[:notice] = "Deleted the comment."
+    else
+      flash[:notice] = "Sorry but comment couldnt be deleted, try again."
+    end
+    redirect_back(fallback_location: root_path)
   end
   def comment_params
     result = params.require(:comment).permit(:post_id, :content)

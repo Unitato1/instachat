@@ -8,6 +8,7 @@
     <h4>Commented: <%= comment.content %></h4>
     <% if current_user == comment.author then%>
       <%= link_to "Edit your comment", edit_comment_path(comment, post_id: @post.id)%>
+      <%= link_to "Delete comment", comment_path(comment: comment), data: {turbo_method: :delete}%>
     <% end %>
   </div>
 <% end %>
