@@ -24,4 +24,7 @@ class User < ApplicationRecord
 
   # likes
   has_many :likes, dependent: :destroy
+
+  # comments
+  has_many :comments, dependent: :destroy
 end
