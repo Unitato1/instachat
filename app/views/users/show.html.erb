@@ -4,6 +4,7 @@
   <% @user.accepted_followers.each do |accepted| %>
     <li>
       <%= accepted.username %>
+      <%= link_to "Delete Friend :(", users_follower_path(accepted, status: "denied"), data: {turbo_method: :patch}%>
     </li>
   <% end %>
 </ul>
@@ -23,6 +24,7 @@
   <ul>
     <% @user.denied_followers.each do |denied|%>
       <li><%= denied.username %> cant be your friend! He smells.</li>
+      <%= link_to "Make them your friend again. They showered!", users_follower_path(denied, status: "accepted"), data: {turbo_method: :patch}%>
     <% end %>
   </ul>
 <% end %>
