@@ -1,16 +1,28 @@
-<h1>
-  <%= post.title %>
+<div class="post">
   <div>
-    Likes: <%= post.likes.count %>
+    <h3>
+      Author: <%= post.author.username %>
+    </h3>
+    <h3>
+      Title: <%= post.title %>
+    </h3>
+    <div>
+      Likes: <%= post.likes.count %>
+    </div>
+    <h4>Content of post:</h4>
+    <p class="content">
+      <%= post.body %>
+    </p>
   </div>
-</h1>
-<p>
-  <%= post.body %>
-</p>
-<%= link_to "Check out this post", post %>
-<%= link_to "Like this post", likes_path(post_id: post.id), data: { turbo_method: :post } %>
-<%= link_to "Unlike this post", like_path(id: post.id), data: { turbo_method: :delete } %>
-<% if current_user == post.author then %>
-  <%= link_to "Destroy this post.", post_path(post), data: { turbo_method: :delete }%>
-  <%= link_to "Edit this post.", edit_post_path(post)%>
-<% end %>
+  <div>
+    <ul class="navigation">
+      <li><%= link_to "Check out this post", post %></li>
+      <li><%= link_to "Like this post", likes_path(post_id: post.id), data: { turbo_method: :post } %></li>
+      <li><%= link_to "Unlike this post", like_path(id: post.id), data: { turbo_method: :delete } %></li>
+      <% if current_user == post.author then %>
+        <li><%= link_to "Destroy this post.", post_path(post), data: { turbo_method: :delete }%></li>
+        <li><%= link_to "Edit this post.", edit_post_path(post)%></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

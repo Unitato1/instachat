@@ -13,7 +13,7 @@
       <h1 style="color: purple">
         Instachat
       </h1>
-      <ul>
+      <ul class="navigation_main">
         <li> <%= link_to "New Posts", posts_path%></li>
         <li> <%= link_to "Users", users_path%></li>
         <li> <%= link_to "Post something.", new_post_path %></li>
@@ -26,6 +26,8 @@
         <h2 style="color: green" class=<%= key %>><%= value %></h2>
       <% end %>
     </header>
-    <%= yield %>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>
