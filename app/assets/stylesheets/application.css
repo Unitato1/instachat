@@ -19,47 +19,85 @@
      padding: 0px;
      margin: 0px;
  }
- 
  html {
      padding: 10px;
      padding-top: 25px;
+    }
+body{
+    display: grid;
+    grid-template: 1fr 9fr / 1fr 9fr;
+}
+body > * {
 }
 body, html, :root{
     height: 100%;
     box-sizing: border-box;
     text-align: center;
-    background-color: rgb(31, 162, 210);
+    background-color: #c7d2fe;
     padding: 0px;
     margin: 0px;
 }
+.logo {
+    grid-area: 1 / 1 / 2 / 2;
+    background-image: "assets/images /bird.svg";
+    background-color: #0284c7;
+    background-position: center center;
+}
+header {
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    background-color: #0284c7;
+}
+header > * {
+    flex: 1;
+}
 h1 {
+    font-size: 3rem;
     color: rgb(81, 0, 81); 
     margin: 20px;
+    text-align: start;
+}
+.profile_links{
+    padding-right: 5%;
+    display: flex;
+    gap: 20px;
+    justify-content: end;
+    align-items: center;
+}
+.profile_links > *
+{
+    border: 1px, solid, black;
+    padding: 2%;
+    background-color: blanchedalmond;
+    border-radius: 15%;
 }
 a {
+    font-size: 1.2rem;
+
     text-decoration: none;
 }
 main {
-    padding-top: 20px;
     height: 100%;
     width: 100%;
     box-sizing: border-box;
     /* border: 1px black solid; */
 }
 .navigation, .navigation_main {
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 20px;
 }
 .navigation  > li, .navigation_main > li {
     list-style: none;
     border: 1px, solid, black;
+    border-radius: 0% 15% 0% 0%;
     padding: 6px;
     background-color: blanchedalmond;
 }
 .navigation_main{
-    flex-direction: row;
+    /* flex-direction: row; */
+    justify-content: start;
 }
 .posts{
     height: 100%;

@@ -1,56 +1,30 @@
 <%= render @user %>
-<h3>Followers: </h3>
-<ul>
-  <% @user.accepted_followers.each do |accepted| %>
-    <li>
-      <%= accepted.username %>
-      <%= link_to "Delete Friend :(", users_follower_path(accepted, status: "denied"), data: {turbo_method: :patch}%>
-    </li>
+<% content_for :top_links do %>
+  <div class="profile_links">
+    <%= link_to 'Edit Profile', edit_user_registration_path %>
+    <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %>
+    <%= link_to "Followers",  edit_user_registration_path%>
+  </div>
+<% end %>
+<div class="user_followers">
+  <h3>Followers: </h3>
+  <%= render "users_followers/followers", followers: @user.accepted_followers %>
+  <% if current_user == @user %>
+    <h3>Friends request: </h3>
+    <%= render "users_followers/followers", followers: @user.pending_followers %>
   <% end %>
-</ul>
-<h3>Friends request: </h3>
-<% if current_user == @user %>
-  <ul>
-    <% @user.pending_followers.each do |pending|%>
-      <li>
-        <%= pending.username %> would like to be your friend!
-        <%= link_to "Accept request!", users_follower_path(pending, status: "accepted"), data: {turbo_method: :patch}%>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
-<h3>Denied request: </h3>
-<% if current_user == @user %>
-  <ul>
-    <% @user.denied_followers.each do |denied|%>
-      <li><%= denied.username %> cant be your friend! He smells.</li>
-      <%= link_to "Make them your friend again. They showered!", users_follower_path(denied, status: "accepted"), data: {turbo_method: :patch}%>
-    <% end %>
-  </ul>
-<% end %>
-<h3>Following: </h3>
-<ul>
-  <% @user.accepted_followings.each do |accepted| %>
-    <li>
-      <%= accepted.username %>
-    </li>
+  <% if current_user == @user %>
+    <h3>Denied request: </h3>
+    <%= render "users_followers/followers", followers: @user.denied_followers %>
   <% end %>
-</ul>
-<h3>Pending followings: </h3>
-<% if current_user == @user %>
-  <ul>
-    <% @user.pending_followings.each do |pending| %>
-      <li>
-        <%= pending.username %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
-<h3>Denied followings: </h3>
-<% if current_user == @user %>
-  <ul>
-    <% @user.denied_followings.each do |denied|%>
-      <li>You can't be<%= denied.username %>'s friend because you smell. Ouch. </li>
-    <% end %>
-  </ul>
-<% end %>
+  <h3>Following: </h3>
+  <%= render "users_followers/followers", followers: @user.accepted_followings %>
+  <% if current_user == @user %>
+    <h3>Pending followings: </h3>
+    <%= render "users_followers/followers", followers: @user.pending_followings %>
+  <% end %>
+  <% if current_user == @user %>
+    <h3>Denied followings: </h3>
+    <%= render "users_followers/followers", followers: @user.denied_followings %>
+  <% end %>
+</div>
