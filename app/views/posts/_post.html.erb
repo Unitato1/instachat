@@ -16,12 +16,12 @@
   </div>
   <div>
     <ul class="navigation">
-      <li><%= link_to "Check out this post", post %></li>
-      <li><%= link_to "Like this post", likes_path(post_id: post.id), data: { turbo_method: :post } %></li>
-      <li><%= link_to "Unlike this post", like_path(id: post.id), data: { turbo_method: :delete } %></li>
+      <li><%= link_to "Post", post %></li>
+      <li><%= link_to "Like", likes_path(post_id: post.id), data: { turbo_method: :post } %></li>
+      <li><%= link_to "Unlike", like_path(id: post.id), data: { turbo_method: :delete } %></li>
       <% if current_user == post.author then %>
-        <li><%= link_to "Destroy this post.", post_path(post), data: { turbo_method: :delete }%></li>
-        <li><%= link_to "Edit this post.", edit_post_path(post)%></li>
+        <li><%= link_to "Delete", post_path(post), data: { turbo_method: :delete }%></li>
+        <li><%= link_to "Edit", edit_post_path(post)%></li>
       <% end %>
     </ul>
   </div>

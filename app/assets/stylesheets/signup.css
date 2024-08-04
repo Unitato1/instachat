@@ -1,0 +1,137 @@
+:root {
+    --bold-color: rgb(23, 37, 84);
+    --lighter-color: rgb(2, 132, 199);
+    --light-color: rgb(199, 210, 254);
+    --background-diff-color: rgb(176, 187, 225);
+    box-sizing: border-box;
+}
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    line-height: 1.4;
+}
+body.devise, :root {
+    height: 100%;
+    
+}
+body.devise {
+    background-color: var(--light-color);
+    display: grid;
+    grid-template: 100% / 3fr 7fr;
+}
+.image_sidebar {
+    height: 100%;
+    background: no-repeat url("nature.jpg") center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.title{
+    margin-top: 20%;
+    /* border: 1px solid black; */
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.title > h1{
+    color: var(--light-color);
+    z-index: 999;
+}
+.shoutout {
+    border: 1px solid black;
+    color: var(--light-color);
+    justify-self: flex-end;
+}
+.devise_main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.devise_main > *{
+    flex: 1;
+}
+.sing_up_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    background-color: var(--background-diff-color);
+    box-shadow: 0px 2px 2px 1px rgb(112, 105, 105);
+}
+.sing_up_text > h2
+{
+    font-size: 1.3rem;
+}
+.fields_basic, .fields_password {
+    padding: 30px;
+    display: flex;
+    gap: 5rem;
+    width: 100%;
+}
+.fields_password {
+    box-shadow: 1px 2px 2px 0px rgb(112, 105, 105);
+    position: relative;
+    z-index: 999;
+}
+input{
+    padding: 2px 10px 2px 10px;
+    width: 200px;
+    border: 2px solid rgb(136, 136, 136, 0.6);
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+input:focus{
+    border: 2px solid rgb(61, 61, 61) ;
+}
+
+.field{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+}
+.actions {
+    padding-top: 30px;
+    
+}
+.actions > input{
+    display: block;
+    margin-left: 30px;
+    background-color: var(--bold-color);
+    color: rgb(211, 211, 211);
+    padding: 8px 16px 8px 16px;
+    border: 0px;
+}
+.links, .actions{
+    background-color: var(--background-diff-color);
+    height: 100%;
+    display: block;
+
+}
+.actions > input:hover{
+    background-color: rgb(3, 121, 3);
+}
+.field > input:valid{
+    border: 2px solid rgb(14, 193, 14);
+}
+
+.links{
+    display: flex;
+    gap: 5px;
+    padding-left: 30px;
+    margin-top: 20px;
+}
+.links > a {
+    color: var(--bold-color);
+}
+/*
+0284c7
+172554
+c7d2fe
+*/
