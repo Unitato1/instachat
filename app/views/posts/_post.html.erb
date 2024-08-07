@@ -6,16 +6,15 @@
     <h3>
       Title: <%= post.title %>
     </h3>
-    <div>
-      Likes: <%= post.likes.count %>
-    </div>
-    <h4>Content of post:</h4>
     <p class="content">
       <%= post.body %>
     </p>
   </div>
   <div>
     <ul class="navigation">
+      <div>
+        Likes: <%= post.likes.count %>
+      </div>
       <li><%= link_to "Post", post %></li>
       <li><%= link_to "Like", likes_path(post_id: post.id), data: { turbo_method: :post } %></li>
       <li><%= link_to "Unlike", like_path(id: post.id), data: { turbo_method: :delete } %></li>
