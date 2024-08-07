@@ -11,16 +11,18 @@
     <div class="image_sidebar">
       <%# <%= image_tag 'nature.jpg', alt: 'Nature foto, image sidebar', class: ' image-sidebar' %>
       <%# <%= image_tag 'nature.jpg', alt: 'Instachat Logo', class: 'logo' %>
-      <div class="title">
-        <h1>
-          Instachat
-        </h1>
+      <div class="title_container">
+        <div class="title">
+          <h1>
+            Instachat
+          </h1>
+        </div>
       </div>
       <p class="shoutout">
         Photo by: <a href="https://unsplash.com/@zorzf?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Zo Razafindramamba</a> on <a href="https://unsplash.com/photos/the-sun-is-setting-over-a-mountain-range-LquOEvDfYGo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
       </p>
     </div>
-    <main class="devise_main">
+    <main>
       <%= yield %>
     </main>
   </body>

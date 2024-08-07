@@ -1,0 +1,101 @@
+body.devise {
+    /* background-color: var(--accent-color); */
+    /* background-color: var(--secondary-color); */
+    /* background-color: var(--primary-color); */
+    /* color: var(--secondary-color); */
+    display: grid;
+    grid-template: 100% / 3fr 7fr;
+    font-size: 125%;
+}
+.devise .image_sidebar {
+    text-align: center;
+    background: no-repeat url("nature.jpg") center / cover;
+    display: flex;
+    flex-direction: column;
+}
+.devise .image_sidebar > * {
+    flex: 1;
+}
+.devise .image_sidebar .title_container {
+    align-content: center;
+}
+.devise .image_sidebar .title {
+    font-size: 32px;
+    padding: 20px 32px 20px 32px;
+    background-color: var(--accent-color-blur);
+}
+.devise .image_sidebar .title > h1{
+    text-align: center;
+    color: var(--secondary-color);
+    /* padding-left: auto; */
+}
+.devise .image_sidebar .shoutout {
+    align-content: end;
+    color: var(--secondary-color);
+    padding: 4px 8px 4px 8px;
+}
+.introduction {
+    padding: 12% var(--space-between-elemets) var(--space-between-elemets) var(--space-between-elemets);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    box-shadow: var(--primary-color) 2px 1px 10px;
+    z-index: 3;
+}
+.new_user {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    padding: 8% var(--space-between-elemets) var(--space-between-elemets) var(--space-between-elemets);
+    gap: var(--space-between-elemets);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    box-shadow: var(--secondary-color) 2px 1px 10px;
+    z-index: 2;
+}
+.field {
+    display: flex;
+    flex-direction: column;
+}
+.field > input {
+    width: 60%;
+    padding: 4px;
+    margin-top: 4px;
+    border-radius: 4px;
+    border-color: var(--accent-color);
+}
+.field > input:focus {
+    scale: 1.1;
+}
+.create_user {
+    padding: 4px 8px 4px 8px;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+    font-size: 20px;
+    transition: 300ms border-color ease;
+
+}
+.create_user:hover {
+    scale: 1.1;
+    cursor: pointer;
+    border-color: var(--primary-color);
+}
+
+.links{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    display: flex;
+    padding: 24px;
+    font-size: 24px;
+    flex: 1;
+}
+
+.links > a{
+    padding-left: 12px;
+}
+.links > a:hover{
+}
+.devise > main{
+    display: flex;
+    flex-direction: column;
+}
