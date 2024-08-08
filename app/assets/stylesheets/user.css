@@ -1,0 +1,13 @@
+.user {
+    display: flex;
+    flex-direction: column;
+    margin: var(--space-between-elemets);
+    background-color: var(--accent-color);
+    height: 10%;
+    padding: 16px;
+    width: 50%;
+    border-radius: 20px;
+    color: var(--secondary-color);
+    margin-left: auto;
+    margin-right: auto;
+}

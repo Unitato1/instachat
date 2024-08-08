@@ -8,15 +8,11 @@
     </ol>
   </div>
 <% end %>
-<%= form_with model: post do |f| %>
-  <div>
-    <%= f.label :title, "Title:" %>
-    <%= f.text_field :title, autofocus: true, placeholder: "Please enter title here."%>
-  </div>
-  <div>
-    <%= f.label :body, "Content:" %>
-    <%= f.text_area :body, placeholder: "Please enter body of post here."%>
-  </div>
+<%= form_with model: post, class: "post_form" do |f| %>
+  <%= f.label :title, "Title:" %>
+  <%= f.text_field :title, autofocus: true, placeholder: "Please enter title here."%>
+  <%= f.label :body, "Content:" %>
+  <%= f.text_area :body, placeholder: "Please enter body of post here."%>
   <div>
     <%= f.submit %>
   </div>
