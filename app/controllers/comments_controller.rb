@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find(params[:comment])
+    @comment = Comment.find(params[:id])
     if @comment.destroy
       flash[:notice] = "Deleted the comment."
     else

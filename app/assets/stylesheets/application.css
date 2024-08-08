@@ -24,25 +24,30 @@ body{
     margin: 0px;
 }
 a {
-    /* text-decoration: none; */
     color: var(--secondary-color);
     font-weight: 900;
 }
 .navigation_main {
-    box-shadow: var(--secondary-color) 1px 0px 5px;
+    /* box-shadow: var(--secondary-color) 1px 0px 5px; */
+    background-color: var(--accent-color);
 }
 .links {
     padding-left: var(--space-between-elemets);
+    padding-top: 24px;
     font-size: 24px;
     position: sticky;
-    top: 24px;
+    top: 0px;
     list-style: none;
 }
-
-.links > li{
-    padding: 10px;
+.links > .title {
+    color: var(--secondary-color);
+    text-shadow: var(--secondary-color) 1px 1px 3px;
+    padding-right: var(--space-between-elemets);
 }
 
+.links > *{
+    padding: 10px;
+}
 
 header {
     background-color: var(--secondary-color);

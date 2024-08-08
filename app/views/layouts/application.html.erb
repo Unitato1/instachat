@@ -11,20 +11,20 @@
   </head>
   <body>
     <%# <%= image_tag 'bird.svg', alt: 'Instachat Logo', class: 'logo' %>
-    <header>
-      <h1>
-        Instachat
-      </h1>
-      <%= yield :top_links %>
-    </header>
+    <%# <header> %>
     <div class="flash">
       <% flash.each do |key, value|%>
         <h2 class=<%= key %> <%= value %></h2>
         <% end %>
       </div>
+      <%= yield :top_links %>
+      <%# </header> %>
       <main class="main_layout">
         <div class="navigation_main">
           <ul class="links">
+            <h1 class="title">
+              Instachat
+            </h1>
             <li> <%= link_to "New Posts", posts_path%></li>
             <li> <%= link_to "Users", users_path%></li>
             <li> <%= link_to "Post something.", new_post_path %></li>

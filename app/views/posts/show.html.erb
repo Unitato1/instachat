@@ -18,12 +18,3 @@
     </div>
   <% end %>
 </div>
-<%= form_with model: @comment, class: "comment_form" do |comment_form| %>
-  <%= comment_form.hidden_field :post_id, value: @post.id %>
-  <div>
-    <%= comment_form.text_area :content, placehoder: "Please enter what your think about this post", autofocus: true, placehoder: "Enter comment here." %>
-  </div>
-  <div>
-    <%=comment_form.submit "Comment"%>
-  </div>
-<% end %>
